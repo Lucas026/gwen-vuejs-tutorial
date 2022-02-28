@@ -39,7 +39,27 @@
 
 # 2ème partie :
 
-    étape 
+    - On peut afficher/cacher des templates grâce a des components et des methods très facilement. Par exemple dans la vidéo on implémente toggleSidebar qui nous permet d'ouvrir et fermer le panier mais comme on ne peut pas l'utiliser tel qu'elle dans le template on utilise un props dans la balise custom sidebar afin de passer la méthode et de pvr l'utiliser dans le template a l'intérieur du component.
+
+    - De même on peut passer les paramètres/attributs de nos méthodes dans le template en le passant a la balise sidebar par un props, qui est aussi déclaré dans le component, on peut ensuite recupérer les infos des méthodes en utilisant ceci {{ nom_méthodes.attributs }}.
+
+    - Grâce au loop on peut facilement afficher les données que l'on dispose dans un JSON par exemple via un LifeCycle Hook qui appelle ce JSON et les afficher dynamiquement. Puis ensuite les utiliser afin de les utliser dans différente méthode afin de les traiter et de ressortir autre chose. On peut déclarer un loop comme ceci <div v-for="(product, i) in inventory.slice(0,3)" :key="product.id" class="card">, le v-for représente la boucle dans laquelle on va faire passer les données et la :key représente la clé par laquelle on va faire passer les données que l'on veut par exemple si on veut recuperer un type on va faire {{ product.type }} dans l'exemple de la vidéo.
+
+# Partie Vue CLI :
+
+    - Tout seul Vuejs n'est pas très utile car a s'il faut travailler sur plusieurs page ça devient vite gênant. Pour cela on peut utiliser un projet Vue CLI qui permettre de réaliser un projet front end beaucoup plus simplement qu'en important seulement le CDN. On peut lancer un server un peu a la manière de symfony avec un npm serve. 
+
+    - Il ajoute aussi un système de routing dans lequel on peut passer le chemin donc le path, le nom de ce chemin ainsi que le component qui y correspond
+
+    - La navbar peut etre mis dans le fichier App.vue car celui-ci est accesible sur l'ensemble des vue que l'on va créer, ensuite en fonction des routes que l'on utilise on doit les déclarer dans le fichier index.js dans le dossier router et il faut aussi importer les vue afin qu'il puisse les connaitre.
+
+    - Afin d'utiliser SASS on doit installer un SASS loader qui va nous permettre d'utiliser les fichiers scss. Le SASS nous permet de customiser dynamiquement nos pages sans passer par un fichier de style de spécifique, on peut importer tout les fichiers sass dans un seul fichier scss afin de tout utiliser sans avoir a les appelé un par un.
+
+    - Au lieu d'avoir un template a l'intérieur d'un component, ce que l'on va faire c'est que l'on va déclarer un une fichier Sidebar.vue a l'intérieur du dossier components et on va y apporter le code tu template. Ensuite on doit l'importer et le déclarer en tant que component dans App.vue afin de pouvoir l'utiliser. On doit aussi réutiliser celle-ci dans la balise custom <sidebar /> afin de faire appelle au methods que nous avons utliser et donc on doit déclarer ces meme méthodes dans App.vue.
+
+    - Au lieu de déclarer 2 fois la les meme data ce que l'on peut faire c'est passé par le router-view. Par exemple dans la vidéo ce que l'on peut faire c'est passé les data inventory dans le router-view depuis App.vue et les récupéré en tant que props dans Home.vue.
+
+
 
 
     

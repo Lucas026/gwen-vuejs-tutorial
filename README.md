@@ -112,4 +112,5 @@ Lien : - https://fr.wikipedia.org/wiki/Document_Object_Model
         - Modèle : Un modèle sert à représenter quelque chose, comme le plan d'une ville. Le DOM représente le document qui se trouve dans le navigateur.
         - Objet : En programmation, un objet est un conteneur qui comporte des propriétés et des méthodes qui sont des variables et des actions concernant ce qu'il   représente. Les objets du DOM peuvent représenter une fenêtre, un document, une phrase, un style…
         - Document : Le DOM concerne un document, tel qu'une page web affichée dans un navigateur. Une page web commence par une balise !DOCTYPE suivi de la balise <html>dans laquelle se trouve le reste du document. Le DOM représente le document affiché par une structure en arbre, comportant des nœuds (branches et feuilles).
-    ![c'est une image]https://img-19.ccm2.net/cI8qqj-finfDcmx6jMK6Vr-krEw=/1500x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg)
+        
+    ![c'est une image](https://img-19.ccm2.net/cI8qqj-finfDcmx6jMK6Vr-krEw=/1500x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg)

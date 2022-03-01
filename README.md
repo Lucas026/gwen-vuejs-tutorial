@@ -4,15 +4,17 @@
 
         étape What is Vuejs :
             - C'est un framework léger
-            - Il est flexible et peu s'adapter très facilement
+            - Il est flexible et peux s'adapter très facilement
 
         étape Vue 3 Setup : 
             - On peut l'utiliser juste en appelant un CDN dans un script
             - On peut déclarer des variables dans le script et les appeller avec {{ nom_variable }} dans l'html
 
         étape Vue js directives :
-            - Il existe des irectives custom dans Vuejs qui peuvent être appelée dans la page html
+            - Il existe des directives custom dans Vuejs qui peuvent être appelée dans la page html
             - On peut leur fournir divers arguments comme par exemple "isVisible"
+
+            v-if = est utilisée pour conditionnellement faire le rendu d’un bloc. Le rendu du bloc sera effectué uniquement si l’expression de la directive retourne une valeur évaluée à vrai.
 
         étapes Methods : 
             - dans Vue.createApp on peut déclarer autre chose que data c'est a dire methods. Dedans on peut implémenter nos propre méthode ainsi que leurs arguments et leur mettre ce que l'on veut dedans
@@ -62,6 +64,8 @@
 
 # Ressource initiale pour comprendre le fonctionnement interne de vue.js
 Lien : https://medium.com/js-imaginea/the-vue-js-internals-7b76f76813e3
+
+    ![](https://miro.medium.com/max/1400/1*LrWPpoyRwQOFtpxqmbQSgg.png)
 
     # Phase de compilation
     Le compilateur Vue lit le modèle d'un composant, le fait passer par des étapes telles que l'analyse(Parsing stage), l'optimisation(Optimization stage), le codegen(CodeGen Stage) et crée finalement une fonction de rendu. Cette fonction est responsable de la création d'un VNode qui est utilisé par le processus de correctif du DOM virtuel pour créer le DOM actuel.

@@ -113,4 +113,5 @@ Lien : - https://fr.wikipedia.org/wiki/Document_Object_Model
         - Objet : En programmation, un objet est un conteneur qui comporte des propriétés et des méthodes qui sont des variables et des actions concernant ce qu'il   représente. Les objets du DOM peuvent représenter une fenêtre, un document, une phrase, un style…
         - Document : Le DOM concerne un document, tel qu'une page web affichée dans un navigateur. Une page web commence par une balise !DOCTYPE suivi de la balise <html>dans laquelle se trouve le reste du document. Le DOM représente le document affiché par une structure en arbre, comportant des nœuds (branches et feuilles).
 
-    ![c'est une image](/DOM_src_wikipedia.png)
+    ![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+

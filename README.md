@@ -14,7 +14,10 @@
             - Il existe des directives custom dans Vuejs qui peuvent être appelée dans la page html
             - On peut leur fournir divers arguments comme par exemple "isVisible"
 
-            v-if = est utilisée pour conditionnellement faire le rendu d’un bloc. Le rendu du bloc sera effectué uniquement si l’expression de la directive retourne une valeur évaluée à vrai.
+            - v-if = est utilisée pour conditionnellement faire le rendu d’un bloc. Le rendu du bloc sera effectué uniquement si l’expression de la directive retourne une valeur évaluée à vrai.
+
+            - v-for : faire le rendu d’une liste d’éléments en nous basant sur un tableau. 
+            - key : Pour expliquer à Vue comment suivre l’identité de chaque nœud, afin que les éléments existants puissent être réutilisés et réordonnés, vous devez fournir un attribut unique key pour chaque élément
 
         étapes Methods : 
             - dans Vue.createApp on peut déclarer autre chose que data c'est a dire methods. Dedans on peut implémenter nos propre méthode ainsi que leurs arguments et leur mettre ce que l'on veut dedans
@@ -27,6 +30,9 @@
             - On peut aussi lui intégrer des methods que l'on peut directement mettre dans le code html du components
 
         étape Components Props :
+
+            - Props = est un mot-clé spécial qui représente les propriétés. Il peut être enregistré sur un composant pour transmettre des données d'un composant parent à l'un de ses composants enfants
+
             - On peut appeller un autre components dans un components afin de le customiser
             - Pour appeller un autre components il suffit juste de mettre component['nom'] dans le components souhaité afin de l'utilisé derrière
             - On peut aussi faire du passage de data, par exemple on a une balise <label> dans un components 1 on peut déclarer/ modifier ses datas dans un components 2, dans le component 1 il suffira juste de l'appelé par le nom par lequelle on l'a nommé dans le component 2
@@ -40,6 +46,8 @@
             - Ceux-ci sont a utilisés sur les components en fonction du cas dans lequel on en a besoin
 
     # 2ème partie :
+
+        - why template : Sous le capot, Vue compile les templates en des fonctions de rendus de DOM virtuel. Combiné au système de réactivité, Vue est en mesure de déterminer intelligemment le nombre minimal de composants pour lesquels il faut redéclencher le rendu et d’appliquer le nombre minimal de manipulations au DOM quand l’état de l’application change.
 
         - On peut afficher/cacher des templates grâce a des components et des methods très facilement. Par exemple dans la vidéo on implémente toggleSidebar qui nous permet d'ouvrir et fermer le panier mais comme on ne peut pas l'utiliser tel qu'elle dans le template on utilise un props dans la balise custom sidebar afin de passer la méthode et de pvr l'utiliser dans le template a l'intérieur du component.
 
@@ -123,6 +131,8 @@ Lien :
         - Le Document Object Model, ou DOM, est une sorte d'interface qui traite tout le langage de balisage (votre HTML) comme des nœuds connectés. Il peut être vu comme une interface d'objets pour les éléments de balisage stockés dans une structure arborescente. Le DOM est ce qui nous permet d'écrire et de changer les styles des éléments, et même de changer les éléments eux-mêmes. Cela se fait en ajoutant, modifiant ou supprimant des balises d'élément ou des styles CSS dans l'en-tête et le corps d'un document, car ils sont représentés sous forme de nœuds et d'objets. C'est ainsi que fonctionne le DOM HTML.
 
     Donc tout va bien avec le DOM. Cependant, à mesure que les applications se développent - ce qui signifie plus de nœuds à traverser, plus d'éléments et plus de scripts pour communiquer avec ces éléments - le DOM se développe plus lentement et coûte beaucoup de puissance de traitement. Essayer d'effectuer une recherche ou même de mettre à jour un DOM devient une tâche difficile, affectant finalement les performances de l'application. C'est pourquoi le DOM virtuel a été créé.
+
+![](https://blog.logrocket.com/wp-content/uploads/2020/12/wireframe-html-dom.png)
 
     L'équipe Vue.js a construit le DOM virtuel pour être une sorte d'abstraction du DOM traditionnel ; c'est une version "allégée" du DOM HTML, mais avec des super pouvoirs. Le DOM virtuel est plus intelligent et trouve donc un moyen d'être plus efficace que le DOM traditionnel. Pour ce faire, il utilise principalement divers algorithmes de différenciation pour éviter de restituer l'intégralité du DOM après toute nouvelle modification ou mise à jour du document. Cela seul améliore considérablement l'efficacité et la gestion des ressources car l'API DOM est appelée moins souvent. Le DOM virtuel par cette explication est situé entre le DOM réel et l'instance de Vue.
     exemple : 

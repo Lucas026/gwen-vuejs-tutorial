@@ -65,7 +65,7 @@
 # Ressource initiale pour comprendre le fonctionnement interne de vue.js
 Lien : https://medium.com/js-imaginea/the-vue-js-internals-7b76f76813e3
 
-    ![](https://miro.medium.com/max/1400/1*LrWPpoyRwQOFtpxqmbQSgg.png)
+![](https://miro.medium.com/max/1400/1*LrWPpoyRwQOFtpxqmbQSgg.png)
 
     # Phase de compilation
     Le compilateur Vue lit le modèle d'un composant, le fait passer par des étapes telles que l'analyse(Parsing stage), l'optimisation(Optimization stage), le codegen(CodeGen Stage) et crée finalement une fonction de rendu. Cette fonction est responsable de la création d'un VNode qui est utilisé par le processus de correctif du DOM virtuel pour créer le DOM actuel.

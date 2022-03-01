@@ -106,8 +106,9 @@ Lien : https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_
     
 # b) faites des recherches supplémentaires sur le sujet et en lien avec le DOM et la manière dont il est manipulé par le framework Vue.js
 # c) en complément, rajouter dans le compte-rendu, ce que vous avez retenu de vos recherches
-Lien :  - https://fr.wikipedia.org/wiki/Document_Object_Model
-        - https://blog.logrocket.com/how-the-virtual-dom-works-in-vue-js/#:~:text=Vue%20uses%20a%20virtual%20DOM,and%20so%20is%20very%20efficient.
+Lien :  
+    - https://fr.wikipedia.org/wiki/Document_Object_Model
+    - https://blog.logrocket.com/how-the-virtual-dom-works-in-vue-js/#:~:text=Vue%20uses%20a%20virtual%20DOM,and%20so%20is%20very%20efficient.
 
     Le Document Object Model (DOM) est une interface de programmation normalisée par le W3C, qui permet à des scripts d'examiner et de modifier le contenu du navigateur web. Par le DOM, la composition d'un document HTML ou XML est représentée sous forme d'un jeu d'objets, lesquels peuvent représenter une fenêtre, une phrase ou un style. À l'aide du DOM, un script peut modifier le document présent dans le navigateur en ajoutant ou en supprimant des nœuds de l'arbre.
         - Modèle : Un modèle sert à représenter quelque chose, comme le plan d'une ville. Le DOM représente le document qui se trouve dans le navigateur.

@@ -106,12 +106,30 @@ Lien : https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_
     
 # b) faites des recherches supplémentaires sur le sujet et en lien avec le DOM et la manière dont il est manipulé par le framework Vue.js
 # c) en complément, rajouter dans le compte-rendu, ce que vous avez retenu de vos recherches
-Lien : - https://fr.wikipedia.org/wiki/Document_Object_Model
+Lien :  - https://fr.wikipedia.org/wiki/Document_Object_Model
+        - https://blog.logrocket.com/how-the-virtual-dom-works-in-vue-js/#:~:text=Vue%20uses%20a%20virtual%20DOM,and%20so%20is%20very%20efficient.
 
     Le Document Object Model (DOM) est une interface de programmation normalisée par le W3C, qui permet à des scripts d'examiner et de modifier le contenu du navigateur web. Par le DOM, la composition d'un document HTML ou XML est représentée sous forme d'un jeu d'objets, lesquels peuvent représenter une fenêtre, une phrase ou un style. À l'aide du DOM, un script peut modifier le document présent dans le navigateur en ajoutant ou en supprimant des nœuds de l'arbre.
         - Modèle : Un modèle sert à représenter quelque chose, comme le plan d'une ville. Le DOM représente le document qui se trouve dans le navigateur.
         - Objet : En programmation, un objet est un conteneur qui comporte des propriétés et des méthodes qui sont des variables et des actions concernant ce qu'il   représente. Les objets du DOM peuvent représenter une fenêtre, un document, une phrase, un style…
         - Document : Le DOM concerne un document, tel qu'une page web affichée dans un navigateur. Une page web commence par une balise !DOCTYPE suivi de la balise <html>dans laquelle se trouve le reste du document. Le DOM représente le document affiché par une structure en arbre, comportant des nœuds (branches et feuilles).
 
-    ![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+    Autre description du DOM :
+        - Le Document Object Model, ou DOM, est une sorte d'interface qui traite tout le langage de balisage (votre HTML) comme des nœuds connectés. Il peut être vu comme une interface d'objets pour les éléments de balisage stockés dans une structure arborescente. Le DOM est ce qui nous permet d'écrire et de changer les styles des éléments, et même de changer les éléments eux-mêmes. Cela se fait en ajoutant, modifiant ou supprimant des balises d'élément ou des styles CSS dans l'en-tête et le corps d'un document, car ils sont représentés sous forme de nœuds et d'objets. C'est ainsi que fonctionne le DOM HTML.
 
+    Donc tout va bien avec le DOM. Cependant, à mesure que les applications se développent - ce qui signifie plus de nœuds à traverser, plus d'éléments et plus de scripts pour communiquer avec ces éléments - le DOM se développe plus lentement et coûte beaucoup de puissance de traitement. Essayer d'effectuer une recherche ou même de mettre à jour un DOM devient une tâche difficile, affectant finalement les performances de l'application. C'est pourquoi le DOM virtuel a été créé.
+
+    L'équipe Vue.js a construit le DOM virtuel pour être une sorte d'abstraction du DOM traditionnel ; c'est une version "allégée" du DOM HTML, mais avec des super pouvoirs. Le DOM virtuel est plus intelligent et trouve donc un moyen d'être plus efficace que le DOM traditionnel. Pour ce faire, il utilise principalement divers algorithmes de différenciation pour éviter de restituer l'intégralité du DOM après toute nouvelle modification ou mise à jour du document. Cela seul améliore considérablement l'efficacité et la gestion des ressources car l'API DOM est appelée moins souvent. Le DOM virtuel par cette explication est situé entre le DOM réel et l'instance de Vue.
+    exemple : 
+        new Vue ({ 
+            el : '#app' , 
+            data : { 
+                text : 'hi LogRocket' }, 
+            render ( createElement ) { return createElement ( 'h1' , { attrs : { id : 'headers' } }, this . text
+            ) ; } });   
+    Va renvoyer :
+        < div id = 'app' > < h1 id = 'headers' > salut LogRocket </ h1 > </ div > 
+
+    Le DOM virtuel Vue est donc constitué de composants Vue, qui sont des objets JavaScript qui étendent l'instance Vue. Vue utilise un DOM virtuel en raison de la différence de vitesse et d'efficacité par rapport au DOM réel. Le DOM virtuel est également plus petit que le DOM réel et est donc très efficace.
+
+    

@@ -34,7 +34,7 @@ let app = Vue.createApp({
   })
 
   app.component('sidebar', {
-    props: ['toggle', 'cart', 'inventory', 'remove'],
+    props: ['toggle', 'cart', 'inventory', 'supprimer'],
     methods: {
       getPrice(name) {
         const product = this.inventory.find((product) => {
@@ -80,7 +80,7 @@ let app = Vue.createApp({
                   <td class="center">{{ quantity }}</td>
                   <td>\${{ quantity * getPrice(key) }}</td>
                   <td class="center">
-                    <button @click="remove(key)" class="btn btn-light cart-remove">
+                    <button @click="supprimer(key)" class="btn btn-light cart-remove">
                       &times;
                     </button>
                   </td>

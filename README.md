@@ -114,8 +114,32 @@ Lien : https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_
     Il est possible de définir des rappels de cycle de vie spécifiques à l'intérieur de la classe, qui s'exécutent à des points spécifiques du cycle de vie de l'élément. 
     Il existe 2 types d'éléments personnalisés :
         - Les éléments personnalisés autonomes : ils n'héritent pas des éléments HTML standard. On peut les utiliser sur une page en les écrivant littéralement comme un élément HTML. Par exemple <popup-info>, ou document.createElement("popup-info").
+```js
+        class PopUpInfo extends HTMLElement {
+            constructor() {
+                // Always call super first in constructor
+                super();
+
+                // write element functionality in here
+
+                ...
+            }
+        }
+```
         - Les éléments intégrés personnalisés héritent des éléments HTML de base. Pour en créer un, on peut spécifier quel élément ils étendent, et ils sont utilisés en écrivant l'élément de base mais en spécifiant le nom de l'élément personnalisé dans l' attribut is. Par exemple <p is="word-count">, ou document.createElement("p", { is: "word-count" }).
-    
+```js
+        class WordCount extends HTMLParagraphElement {
+            constructor() {
+                // Always call super first in constructor
+                super();
+
+                // Element functionality written in here
+
+                ...
+            }
+        }
+```
+
 # b) faites des recherches supplémentaires sur le sujet et en lien avec le DOM et la manière dont il est manipulé par le framework Vue.js
 # c) en complément, rajouter dans le compte-rendu, ce que vous avez retenu de vos recherches
 Lien :  
@@ -136,14 +160,25 @@ Lien :
 
     L'équipe Vue.js a construit le DOM virtuel pour être une sorte d'abstraction du DOM traditionnel ; c'est une version "allégée" du DOM HTML, mais avec des super pouvoirs. Le DOM virtuel est plus intelligent et trouve donc un moyen d'être plus efficace que le DOM traditionnel. Pour ce faire, il utilise principalement divers algorithmes de différenciation pour éviter de restituer l'intégralité du DOM après toute nouvelle modification ou mise à jour du document. Cela seul améliore considérablement l'efficacité et la gestion des ressources car l'API DOM est appelée moins souvent. Le DOM virtuel par cette explication est situé entre le DOM réel et l'instance de Vue.
     exemple : 
+```js  
         new Vue ({ 
             el : '#app' , 
             data : { 
-                text : 'hi LogRocket' }, 
-            render ( createElement ) { return createElement ( 'h1' , { attrs : { id : 'headers' } }, this . text
-            ) ; } });   
+                text : 'hi LogRocket'
+            }, 
+            render ( createElement ) { 
+                return createElement ( 
+                    'h1' , 
+                    { attrs : { id : 'headers' } },
+                    this.text
+                ); 
+            } 
+        }); 
+```  
     Va renvoyer :
+```js
         < div id = 'app' > < h1 id = 'headers' > salut LogRocket </ h1 > </ div > 
+```
 
     Le DOM virtuel Vue est donc constitué de composants Vue, qui sont des objets JavaScript qui étendent l'instance Vue. Vue utilise un DOM virtuel en raison de la différence de vitesse et d'efficacité par rapport au DOM réel. Le DOM virtuel est également plus petit que le DOM réel et est donc très efficace.
 
